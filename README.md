@@ -103,6 +103,20 @@ These are you're typical Variables that also exist in many other Languages
 These are Variables that can go in the minus area of Numbers 
 
 Normaly when you write the Variables in the Above list, these are then normally signed
+- 'int8' == It has a range of -128 to 127
+- 'int16' == It has a range of -32768 to 32767
+- 'int32' == It has a range of -2147483648 to 2147483647
+- 'int64' == It has a range of -9223372036854775808 to 9223372036854775807
+
+### Unsigned Variables in Go
+These are the Variables that can not go into the minus area
+
+but these Variables have a greater range in the Plus range
+- 'uint8' == It has a range of 0 to 255
+- 'uint16' == It has a range of 0 to 65535
+- 'uint32' == It has a range of 0 to 4294967295
+- 'uint64' == It has a range of 0 to 18446744073709551615
+- 'uintptr' == An unsigned integer type that is large enough to store the uninterpreted bits of a pointer value.
 
 
 
