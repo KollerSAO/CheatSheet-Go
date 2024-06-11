@@ -118,7 +118,7 @@ but these Variables have a greater range in the Plus range
 - 'uint64' == It has a range of 0 to 18446744073709551615
 - 'uintptr' == An unsigned integer type that is large enough to store the uninterpreted bits of a pointer value.
 ---
-### How to declare and initialize Variables
+## How to declare and initialize Variables
 You need to declare variables in Go so that you can use them, remember that if you write the Variable name in caps
 it is public else it is private
 ```go
@@ -145,7 +145,7 @@ var a, b = 6, "Hello" without the type
 a,b,c,d := 10,'P',10.1,'Ü' // These are also only localy available
 ```
 ---
-### How to use the Variables
+## How to use the Variables
 You know how to declare and initialize variables but what can you do 
 with them now
 You can do basicly anything with them with the operators
@@ -155,7 +155,7 @@ b := 5
 c := a+b //By the way it is 11
 ```
 ---
- ### Pointers 
+ ## Pointers 
  In Golang and for example c there is something like a pointer 
  they are used so that you don't need to declare a variable
  anytime you want to use a a value of another variable 
@@ -173,7 +173,7 @@ fmt.Println(value) // Output: 42
 *ptr = 100    // Modify the value stored at the address pointed to by 'ptr' (which is 'a')
 fmt.Println(a)  // Output: 100 (original variable 'a' is now modified)
 ```
-### Array
+## Array
 Arrays are the best example for a variable that stores a definit amount of
 variables of the same type
 ```go
@@ -186,7 +186,7 @@ fmt.Println(arr[0]) // it is 1
 // When you want to save more variables than n you need to use a slice
 ```
 ---
-### Slice
+## Slice
 Slices are a flexible array that can grow or shrink as needed.
 ```go
 var numbers []int  // Declares an empty slice of integers
@@ -196,6 +196,138 @@ fmt.Println(fruits[0]) // it is apple
 //Do you wanna know why slices are called slices because you can slice them
 citrusFruits := fruits[1:3] 
 fmt.Println(citrusFruits[0:2]) // it is banana orange
+```
+## Struct
+Structs are your data types it consist of variables or other structs
+```go
+type person struct {
+  Name string
+  Age int
+  City string
+}
+alice := person{}
+var alice person  // Declare a variable of type Person
+var alice person = {Name : "Alice",Age : 16,City : "a"}
+alice.Name = "Alice"
+alice.Age = 30
+alice.City = "New York"
+fmt.Println(alice.City)
+
+// There is also embedded struct that just means that a struct in a struct
+type Animal struct {
+    Name string
+}
+// Dog struct embedded in Animal
+type Dog struct {
+    Animal // Embedded struct
+    Breed  string
+}
+dog := Dog{
+    Animal: Animal{Name: "Buddy"},
+    Breed:  "Labrador",
+}
+```
+---
+## Function
+Function are code blocks for specific task
+```go
+func functionName(parameters) (returnValues) {
+  // Function body containing code to be executed
+  return returnValue1, returnValue2, ... // Optional return values
+}
+///////////////////////////////////////////////////////////////////
+type Vec3d struct(Datatyp){
+	(variablen Namen) + Datentyp
+}
+func add(Variables) Vec3d{
+	sum := Vec3d
+	return sum
+}
+func add()(int32,int32)// Two returns{
+	return 22,22
+}
+///Named Return in einer func:
+func (v *Vec3d) add(rhs Vec3d) Vec3d{// add ist eine Methode for a struct
+	sum := Vec3d{}
+}
+/// There are also variadic funtion. They are used when you want to give many variables of a
+///type to a function
+func sum(numbers ...int) int {
+    total := 0
+    for _, num := range numbers {
+        total += num
+    }
+    return total
+}
+func main() {
+    // Calling sum function with different number of arguments
+    fmt.Println(sum(1, 2, 3))        // Output: 6
+    fmt.Println(sum(1, 2, 3, 4, 5))  // Output: 15
+    fmt.Println(sum(10))             // Output: 10
+    fmt.Println(sum())               // Output: 0 (no arguments provided)
+}
+```
+## Controle structures
+there are many controle structures in golang
+- if
+- switch
+
+### if 
+These are used if you want to compere some variables
+```go
+///Normal if
+if x > 10 {
+    fmt.Println("x is bigger 10")
+}else if x == 10 {
+    fmt.Println("x is equals 10")
+}else {
+    fmt.Println("x is 10 or smaller")
+}
+
+///If wih a statment:
+if y := x * 2; y > 10 {
+    fmt.Println("y is bigger than 10")
+}
+```
+---
+### Switch
+These are used for many if in one structure
+```go
+///Switch without statment:
+switch day:= 3 {
+case 1:
+    fmt.Println("Monday")
+ fallthrough // it also goes in the next case i don`t know why you need this
+case 2:
+    fmt.Println("Thursday")
+case 3:
+    fmt.Println("Wensday")
+default:
+    fmt.Println("error")
+}
+
+//Switch with statment:
+x := 3
+switch{
+case x > 10:
+    fmt.Println("x is bigger than 10")
+case x == 10:
+    fmt.Println("x equals 10")
+default:
+    fmt.Println("x is lower than 10")
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
