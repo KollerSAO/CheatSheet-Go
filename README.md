@@ -350,12 +350,16 @@ value)
 }
 ```
 These are the thinks to terminate the loop early
+
 Break:
 The break statement ends the current loop immediately and continues with the code after the loop.
+
 Continue:
 The continue statement skips the remaining statements in the current iteration and continues with the next iteration.
+
 Return:
 If the loop is in a function, a return statement can end the function (and therefore the loop) completely.
+
 Labels:
 The you can declare labels, labels are used for when you want to end many for in one statment
 ```go
