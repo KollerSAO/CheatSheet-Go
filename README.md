@@ -317,6 +317,60 @@ default:
     fmt.Println("x is lower than 10")
 }
 ```
+------
+## Loops
+There are only one type of loop it is for but it can be convertet in many other types
+-for
+-while
+-infinite
+-foreach
+```go
+/// Basic for loop
+for i := 0; i < 10; i++ {
+    fmt.Println(i)
+}
+
+/// for as a while loop
+i := 0
+for i < 10 {
+    fmt.Println(i)
+    i++
+}
+
+/// infinite for
+for {
+    fmt.Println("infinite-loop")
+}
+
+/// for as foreach loop
+numbers := []int{1, 2, 3, 4, 5}
+for index, value := range numbers {
+    fmt.Printf("Index: %d, Wert: %d\n", index,
+value)
+}
+```
+These are the thinks to terminate the loop early
+Break:
+The break statement ends the current loop immediately and continues with the code after the loop.
+Continue:
+The continue statement skips the remaining statements in the current iteration and continues with the next iteration.
+Return:
+If the loop is in a function, a return statement can end the function (and therefore the loop) completely.
+Labels:
+The you can declare labels, labels are used for when you want to end many for in one statment
+```go
+func main() {
+OuterLoop: //label
+    for i := 0; i < 3; i++ {
+        for j := 0; j < 3; j++ {
+            if i == 1 && j == 1 {
+                break OuterLoop // end all for loops
+            }
+            fmt.Printf("i = %d, j = %d\n", i, j)
+        }
+    }
+}
+```go
 
 
 
