@@ -173,4 +173,29 @@ fmt.Println(value) // Output: 42
 *ptr = 100    // Modify the value stored at the address pointed to by 'ptr' (which is 'a')
 fmt.Println(a)  // Output: 100 (original variable 'a' is now modified)
 ```
+### Array
+Arrays are the best example for a variable that stores a definit amount of
+variables of the same type
+```go
+//you declare a array with var <name> [n]<type>
+var arr [6]int
+//you can initialize an array like this
+var arr [5]int =  [5]int{1, 2, 3, 4, 5} // Yes you need to write [n]<type>{value} i don't know why
+arr := [5]int{1, 2, 3, 4, 5}
+fmt.Println(arr[0]) // it is 1
+// When you want to save more variables than n you need to use a slice
+```
+---
+### Slice
+Slices are a flexible array that can grow or shrink as needed.
+```go
+var numbers []int  // Declares an empty slice of integers
+fruits := []string{"apple", "banana", "orange"}  // Slice with initial values
+fmt.Println(fruits[0]) // it is apple
+
+//Do you wanna know why slices are called slices because you can slice them
+citrusFruits := fruits[1:3] 
+fmt.Println(citrusFruits[0:2]) // it is banana orange
+
+
 
