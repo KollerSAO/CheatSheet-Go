@@ -123,21 +123,54 @@ You need to declare variables in Go so that you can use them, remember that if y
 it is public else it is private
 ```go
 // declaring
-// You must declare a variable with var <name> <type>
+// You can declare a variable with var <name> <type>
 var a int
 var b rune
 var a,b,c,d int
 
+//You can also declare a variable with const <name> <typer>
+// But you can't change the variable anymore
+const a int
+const b rune
+
 //Initializing
 // You can do it with the declaring type
 var a int = 6
-var a rune = 'A'
+const a rune = 'A'
 a := 2 //It is only local available
 
 // You can also initialize many variables in the same line
 var a, b, c ,d ,e int = 1, 2, 3, 4, 5
 var a, b = 6, "Hello" without the type
 a,b,c,d := 10,'P',10.1,'Ü' // These are also only localy available
- 
+```
+---
+### How to use the Variables
+You know how to declare and initialize variables but what can you do 
+with them now
+You can do basicly anything with them with the operators
+```go
+var a int = 6
+b := 5
+c := a+b //By the way it is 11
+```
+---
+ ### Pointers 
+ In Golang and for example c there is something like a pointer 
+ they are used so that you don't need to declare a variable
+ anytime you want to use a a value of another variable 
+```go
+//declaring a pointer
+var a int = 42  // Regular variable with value 42
+var ptr *int    // Pointer variable to store an int address
+ptr = &a        // Assign the address of 'a' to the pointer 'ptr'
 
+//dereferencing Pointers
+value := *ptr  // Dereference 'ptr' to get the value stored at its address (which is 42)
+fmt.Println(value) // Output: 42
+
+//modifying Values through Pointers
+*ptr = 100    // Modify the value stored at the address pointed to by 'ptr' (which is 'a')
+fmt.Println(a)  // Output: 100 (original variable 'a' is now modified)
+```
 
