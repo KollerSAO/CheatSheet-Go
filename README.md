@@ -117,6 +117,27 @@ but these Variables have a greater range in the Plus range
 - 'uint32' == It has a range of 0 to 4294967295
 - 'uint64' == It has a range of 0 to 18446744073709551615
 - 'uintptr' == An unsigned integer type that is large enough to store the uninterpreted bits of a pointer value.
+---
+### How to declare and initialize Variables
+You need to declare variables in Go so that you can use them, remember that if you write the Variable name in caps
+it is public else it is private
+```go
+// declaring
+// You must declare a variable with var <name> <type>
+var a int
+var b rune
+var a,b,c,d int
 
+//Initializing
+// You can do it with the declaring type
+var a int = 6
+var a rune = 'A'
+a := 2 //It is only local available
+
+// You can also initialize many variables in the same line
+var a, b, c ,d ,e int = 1, 2, 3, 4, 5
+var a, b = 6, "Hello" without the type
+a,b,c,d := 10,'P',10.1,'Ü' // These are also only localy available
+ 
 
 
