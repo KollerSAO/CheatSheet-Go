@@ -155,6 +155,14 @@ b := 5
 c := a+b //By the way it is 11
 ```
 ---
+## How to delete Variables or anything else in code
+Golang is a good languange that does not allow variables or anything else
+to be not used in code. You can not declare a variable and never use them 
+you just can not. But if you wanna delete them there is the Garbage collection
+it is your garbage man. Golang nows when a variable is not used anymore and 
+deletes them. Pointers are different, you just need to not use them anymore then
+there are gone.
+---
  ## Pointers 
  In Golang and for example c there is something like a pointer 
  they are used so that you don't need to declare a variable
@@ -181,7 +189,7 @@ variables of the same type
 var arr [6]int
 //you can initialize an array like this
 var arr [5]int =  [5]int{1, 2, 3, 4, 5} // Yes you need to write [n]<type>{value} i don't know why
-arr := [5]int{1, 2, 3, 4, 5}
+arr := [5]int{1, 2, 3, 4, 5} // Short form for declare an array with values
 fmt.Println(arr[0]) // it is 1
 // When you want to save more variables than n you need to use a slice
 ```
@@ -190,7 +198,7 @@ fmt.Println(arr[0]) // it is 1
 Slices are a flexible array that can grow or shrink as needed.
 ```go
 var numbers []int  // Declares an empty slice of integers
-fruits := []string{"apple", "banana", "orange"}  // Slice with initial values
+fruits := []string{"apple", "banana", "orange"}  // Slice with initial values short form
 fmt.Println(fruits[0]) // it is apple
 
 //Do you wanna know why slices are called slices because you can slice them
@@ -198,7 +206,7 @@ citrusFruits := fruits[1:3]
 fmt.Println(citrusFruits[0:2]) // it is banana orange
 ```
 ## Struct
-Structs are your data types it consist of variables or other structs
+Structs are your own data types it consist of variables or other structs
 ```go
 type person struct {
   Name string
@@ -207,13 +215,13 @@ type person struct {
 }
 alice := person{}
 var alice person  // Declare a variable of type Person
-var alice person = {Name : "Alice",Age : 16,City : "a"}
-alice.Name = "Alice"
+var alice person = {Name : "Alice",Age : 16,City : "a"} //Declare with Values
+alice.Name = "Alice" //add values after declaring
 alice.Age = 30
 alice.City = "New York"
 fmt.Println(alice.City)
 
-// There is also embedded struct that just means that a struct in a struct
+// There is also embedded struct that just means that a struct is in a struct
 type Animal struct {
     Name string
 }
@@ -247,7 +255,7 @@ func add()(int32,int32)// Two returns{
 	return 22,22
 }
 ///Named Return in einer func:
-func (v *Vec3d) add(rhs Vec3d) Vec3d{// add ist eine Methode for a struct
+func (v *Vec3d) add(rhs Vec3d) Vec3d{// add is a Methode for a struct
 	sum := Vec3d{}
 }
 /// There are also variadic funtion. They are used when you want to give many variables of a
@@ -273,7 +281,7 @@ there are many controle structures in golang
 - switch
 
 ### if 
-These are used if you want to compere some variables
+These are used if you want to compare some variables
 ```go
 ///Normal if
 if x > 10 {
@@ -297,7 +305,7 @@ These are used for many if in one structure
 switch day:= 3 {
 case 1:
     fmt.Println("Monday")
- fallthrough // it also goes in the next case i don`t know why you need this
+ fallthrough // it also goes in the next case i don`t know why you use this it is not needed
 case 2:
     fmt.Println("Thursday")
 case 3:
@@ -319,13 +327,14 @@ default:
 ```
 ------
 ## Loops
-There are only one type of loop it is for but it can be convertet in many other types
+There are only one type of loop, it is 'For' but it can be convertet in many other types
 -for
 -while
 -infinite
 -foreach
 ```go
 /// Basic for loop
+// It goes from 0 to 10 
 for i := 0; i < 10; i++ {
     fmt.Println(i)
 }
@@ -345,8 +354,7 @@ for {
 /// for as foreach loop
 numbers := []int{1, 2, 3, 4, 5}
 for index, value := range numbers {
-    fmt.Printf("Index: %d, Wert: %d\n", index,
-value)
+    fmt.Printf("Index: %d, Wert: %d\n", index,value)
 }
 ```
 These are the thinks to terminate the loop early
