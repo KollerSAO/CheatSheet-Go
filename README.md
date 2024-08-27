@@ -159,9 +159,8 @@ c := a+b //By the way it is 11
 Golang is a good languange that does not allow variables or anything else
 to be not used in code. You can not declare a variable and never use them 
 you just can not. But if you wanna delete them there is the Garbage collection
-it is your garbage man. Golang nows when a variable is not used anymore and 
-deletes them. Pointers are different, you just need to not use them anymore then
-there are gone.
+it is your garbage man. Golang knows when a variable is not used anymore and 
+deletes them.
 ---
  ## Pointers 
  In Golang and for example c there is something like a pointer 
