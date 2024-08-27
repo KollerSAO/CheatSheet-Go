@@ -206,6 +206,9 @@ fmt.Println(citrusFruits[0:2]) // it is banana orange
 ```
 ## Struct
 Structs are your own data types it consist of variables or other structs
+If you write the first letter of a struct in Uppercase it is visible in every file
+If you write the first letter of a struct in Lowercase it is only visible in the file where the 
+struct in declared
 ```go
 type person struct {
   Name string
@@ -237,6 +240,7 @@ dog := Dog{
 ---
 ## Function
 Function are code blocks for specific task
+Same as structs first letter decides if it is visible or not
 ```go
 func functionName(parameters) (returnValues) {
   // Function body containing code to be executed
