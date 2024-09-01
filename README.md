@@ -1,5 +1,5 @@
 # CheatSheet-Go
-This is a Repository for a cheatsheet for go in englisch
+This is a Repository for a cheatsheet for Golang in englisch
 
 First things first is **how to write a comment**
 ```go
