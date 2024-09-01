@@ -141,7 +141,7 @@ a := 2 //It is only local available
 
 // You can also initialize many variables in the same line
 var a, b, c ,d ,e int = 1, 2, 3, 4, 5
-var a, b = 6, "Hello" without the type
+var a, b = 6, "Hello" //without the type
 a,b,c,d := 10,'P',10.1,'Ü' // These are also only localy available
 ```
 ---
